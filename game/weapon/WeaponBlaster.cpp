@@ -3,6 +3,7 @@
 
 #include "../Game_local.h"
 #include "../Weapon.h"
+#include "../gamesys/SysCmds.h"
 
 #define BLASTER_SPARM_CHARGEGLOW		6
 
@@ -431,7 +432,22 @@ stateResult_t rvWeaponBlaster::State_Fire ( const stateParms_t& parms ) {
 				PlayEffect ( "fx_chargedflash", barrelJointView, false );
 				PlayAnim( ANIMCHANNEL_ALL, "chargedfire", parms.blendFrames );
 			} else {
-				Attack ( false, 1, spread, 0, 1.0f );
+				// Attack ( false, 1, spread, 0, 1.0f );
+				/* CHANGED CODE
+				On Attack, spawn in a unit
+				for now just spawn a regular friendly marine
+				*/
+				// gameLocal.Printf("Attacking with the blaster");
+				
+				// SysCmds.cpp 1113
+				// define the args for the spawn command
+				idCmdArgs(args);
+				// spawn commands wants the class name of the entity to spawn
+				// friendly generic marine is "char_marine"
+				args.AppendArg("char_marine");
+
+				Cmd_Spawn_f(args);
+
 				PlayEffect ( "fx_normalflash", barrelJointView, false );
 				PlayAnim( ANIMCHANNEL_ALL, "fire", parms.blendFrames );
 			}
