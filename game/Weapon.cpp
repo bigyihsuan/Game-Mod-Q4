@@ -2502,17 +2502,22 @@ void rvWeapon::AddToClip ( int amount ) {
 rvWeapon::Attack
 ================
 */
-void rvWeapon::Attack( bool altAttack, int num_attacks, float spread, float fuseOffset, float power ) {
+idEntity* rvWeapon::Attack( bool altAttack, int num_attacks, float spread, float fuseOffset, float power ) {
 	idVec3 muzzleOrigin;
 	idMat3 muzzleAxis;
+
+
+	// NEW CODE
+	idEntity* target = NULL;
+	// END NEW CODE
 	
 	if ( !viewModel ) {
 		common->Warning( "NULL viewmodel %s\n", __FUNCTION__ );
-		return;
+		return target;
 	}
 	
 	if ( viewModel->IsHidden() ) {
-		return;
+		return target;
 	}
 
 	// avoid all ammo considerations on an MP client
@@ -2520,7 +2525,7 @@ void rvWeapon::Attack( bool altAttack, int num_attacks, float spread, float fuse
 		// check if we're out of ammo or the clip is empty
 		int ammoAvail = owner->inventory.HasAmmo( ammoType, ammoRequired );
 		if ( !ammoAvail || ( ( clipSize != 0 ) && ( ammoClip <= 0 ) ) ) {
-			return;
+			return target;
 		}
 
 		owner->inventory.UseAmmo( ammoType, ammoRequired );
@@ -2594,7 +2599,7 @@ void rvWeapon::Attack( bool altAttack, int num_attacks, float spread, float fuse
 		idDict& dict = altAttack ? attackAltDict : attackDict;
 		power *= owner->PowerUpModifier( PMOD_PROJECTILE_DAMAGE );
 		if ( altAttack ? wfl.attackAltHitscan : wfl.attackHitscan ) {
-			Hitscan( dict, muzzleOrigin, muzzleAxis, num_attacks, spread, power );
+			target = Hitscan( dict, muzzleOrigin, muzzleAxis, num_attacks, spread, power );
 		} else {
 			LaunchProjectiles( dict, muzzleOrigin, muzzleAxis, num_attacks, spread, fuseOffset, power );
 		}
@@ -2602,6 +2607,7 @@ void rvWeapon::Attack( bool altAttack, int num_attacks, float spread, float fuse
 		statManager->WeaponFired( owner, weaponIndex, num_attacks );
 		
 	}
+	return target;
 }
 
 /*
@@ -2737,7 +2743,7 @@ void rvWeapon::OnLaunchProjectile ( idProjectile* proj ) {
 rvWeapon::Hitscan
 ================
 */
-void rvWeapon::Hitscan( const idDict& dict, const idVec3& muzzleOrigin, const idMat3& muzzleAxis, int num_hitscans, float spread, float power ) {
+idEntity* rvWeapon::Hitscan( const idDict& dict, const idVec3& muzzleOrigin, const idMat3& muzzleAxis, int num_hitscans, float spread, float power ) {
 	idVec3  fxOrigin;
 	idMat3  fxAxis;
 	int		i;
@@ -2745,6 +2751,10 @@ void rvWeapon::Hitscan( const idDict& dict, const idVec3& muzzleOrigin, const id
 	float	spin;
 	idVec3	dir;
 	int		areas[ 2 ];
+
+	// NEW CODE
+	idEntity* target = NULL;
+	// END NEW CODE
 
 	idBitMsg	msg;
 	byte		msgBuf[ MAX_GAME_MESSAGE_SIZE ];
@@ -2820,7 +2830,7 @@ void rvWeapon::Hitscan( const idDict& dict, const idVec3& muzzleOrigin, const id
 		}
 		dir.Normalize();
 
-		gameLocal.HitScan( dict, muzzleOrigin, dir, fxOrigin, owner, false, 1.0f, NULL, areas );
+		target = gameLocal.HitScan( dict, muzzleOrigin, dir, fxOrigin, owner, false, 1.0f, NULL, areas );
 
 		if ( gameLocal.isServer ) {
 			msg.WriteDir( dir, 24 );
@@ -2832,6 +2842,7 @@ void rvWeapon::Hitscan( const idDict& dict, const idVec3& muzzleOrigin, const id
 			}
 		}
 	}
+	return target;
 }
 
 /*

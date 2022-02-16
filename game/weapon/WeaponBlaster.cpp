@@ -441,13 +441,33 @@ stateResult_t rvWeaponBlaster::State_Fire ( const stateParms_t& parms ) {
 				
 				// SysCmds.cpp 1113
 				// define the args for the spawn command
-				idCmdArgs(args);
+				//idCmdArgs(args);
 				// spawn commands wants the class name of the entity to spawn
 				// friendly generic marine is "char_marine"
-				args.AppendArg("spawn"); // 0th arg is the command name
-				args.AppendArg("char_marine");
+				//args.AppendArg("spawn"); // 0th arg is the command name
+				//args.AppendArg("char_marine");
 
-				Cmd_Spawn_f(args);
+				// Cmd_Spawn_f(args);
+
+				// instead of using spawn command, do the spawing ourselves
+				idDict dict;
+				float yaw = player->viewAngles.yaw;
+				idVec3 spawnLocation;
+				idVec3 playerLocation = player->GetPhysics()->GetOrigin() + idAngles(0, yaw, 0).ToForward() * 80 + idVec3(0, 0, 1);
+				// find the location the player is pointing at
+				idEntity* target = Attack(false, 1, 0, 0, 0.0f);
+
+				dict.Set("classname", "char_marine");
+				dict.Set("angle", va("%f", yaw + 180));
+				dict.Set("origin", target->GetWorldCoordinates(playerLocation).ToString());
+
+				idEntity* newEnt = NULL;
+				gameLocal.SpawnEntityDef(dict, &newEnt);
+
+				if (newEnt) {
+					gameLocal.Printf("[BLASTER] spawned entity '%s'\n", newEnt->name.c_str());
+				}
+
 
 				PlayEffect ( "fx_normalflash", barrelJointView, false );
 				PlayAnim( ANIMCHANNEL_ALL, "fire", parms.blendFrames );
