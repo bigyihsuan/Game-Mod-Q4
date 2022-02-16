@@ -1138,7 +1138,13 @@ void Cmd_Spawn_f( const idCmdArgs &args ) {
 	org = player->GetPhysics()->GetOrigin() + idAngles( 0, yaw, 0 ).ToForward() * 80 + idVec3( 0, 0, 1 );
 	dict.Set( "origin", org.ToString() );
 
+	// NEW CODE
+	gameLocal.Printf("0 %s\n", args.Argv(0));
+	gameLocal.Printf("1 %s\n", args.Argv(1));
+	// END NEW CODE
+
 	for( i = 2; i < args.Argc() - 1; i += 2 ) {
+		gameLocal.Printf("%i %s\n", args.Argv(i)); // NEW CODE
 
 		key = args.Argv( i );
 		value = args.Argv( i + 1 );

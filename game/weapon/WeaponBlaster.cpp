@@ -444,6 +444,7 @@ stateResult_t rvWeaponBlaster::State_Fire ( const stateParms_t& parms ) {
 				idCmdArgs(args);
 				// spawn commands wants the class name of the entity to spawn
 				// friendly generic marine is "char_marine"
+				args.AppendArg("spawn"); // 0th arg is the command name
 				args.AppendArg("char_marine");
 
 				Cmd_Spawn_f(args);
