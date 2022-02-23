@@ -455,17 +455,24 @@ stateResult_t rvWeaponBlaster::State_Fire ( const stateParms_t& parms ) {
 				idVec3 spawnLocation;
 				idVec3 playerLocation = player->GetPhysics()->GetOrigin() + idAngles(0, yaw, 0).ToForward() * 80 + idVec3(0, 0, 1);
 				// find the location the player is pointing at
+				gameLocal.Printf("[BLASTER] getting target spawn location...");
 				idEntity* target = Attack(false, 1, 0, 0, 0.0f);
+				// prevent spawning if pointing at the sky
+				if (target) {
+					gameLocal.Printf("[BLASTER] target found");
+					spawnLocation = target->GetWorldCoordinates(playerLocation);
+					spawnLocation.z += 100;
 
-				dict.Set("classname", "char_marine");
-				dict.Set("angle", va("%f", yaw + 180));
-				dict.Set("origin", target->GetWorldCoordinates(playerLocation).ToString());
+					dict.Set("classname", "char_marine");
+					dict.Set("angle", va("%f", yaw + 180));
+					dict.Set("origin", spawnLocation.ToString());
 
-				idEntity* newEnt = NULL;
-				gameLocal.SpawnEntityDef(dict, &newEnt);
+					idEntity* newEnt = NULL;
+					gameLocal.SpawnEntityDef(dict, &newEnt);
 
-				if (newEnt) {
-					gameLocal.Printf("[BLASTER] spawned entity '%s'\n", newEnt->name.c_str());
+					if (newEnt) {
+						gameLocal.Printf("[BLASTER] spawned entity '%s'\n", newEnt->name.c_str());
+					}
 				}
 
 
