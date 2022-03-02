@@ -7620,6 +7620,7 @@ idEntity* idGameLocal::HitScan(
 				TracePoint( owner, tr, start, end, contents, additionalIgnore );
 			}
 			//gameRenderWorld->DebugArrow( colorRed, start, end, 10, 5000 );
+			//gameLocal.Printf("[hitscan] start = %s\n          end = %s\n", start.ToString(), end.ToString());
 // RAVEN END
 			
 			// If the hitscan hit a no impact surface we can just return out
@@ -7983,6 +7984,9 @@ idGameLocal::TracePoint
 */
 bool idGameLocal::TracePoint( const idEntity* ent, trace_t &results, const idVec3 &start, const idVec3 &end, int contentMask, const idEntity *passEntity ) {
 	idClip* clipWorld = GetEntityClipWorld( ent );
+
+	//gameRenderWorld->DebugArrow(colorRed, start, end, 10, 5000);
+	//gameLocal.Printf("[tracepoint] start = %s\n             end = %s\n", start.ToString(), end.ToString());
 	
 	if( clipWorld ) {
 		return clipWorld->TracePoint( results, start, end, contentMask, passEntity );

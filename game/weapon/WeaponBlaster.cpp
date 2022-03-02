@@ -455,24 +455,45 @@ stateResult_t rvWeaponBlaster::State_Fire ( const stateParms_t& parms ) {
 				idVec3 spawnLocation;
 				idVec3 playerLocation = player->GetPhysics()->GetOrigin() + idAngles(0, yaw, 0).ToForward() * 80 + idVec3(0, 0, 1);
 				// find the location the player is pointing at
-				gameLocal.Printf("[BLASTER] getting target spawn location...");
-				idEntity* target = Attack(false, 1, 0, 0, 0.0f);
+				gameLocal.Printf("[BLASTER] getting target spawn location...\n");
+				// idEntity* target = Attack(false, 1, 0, 0, 0.0f);
+
+				idVec3 origin, playerOrigin;
+				idMat3 axis;
+				
+				// target->GetPosition(origin, axis);
+				// gameLocal.Printf("target position: %s\n", origin.ToString());
+				// player->GetPosition(playerOrigin, axis);
+				// gameLocal.Printf("player position: %s\n", playerOrigin.ToString());
+
+				// trace type
+				// gamelocal TracePoint()
+				// struct trace_t ==> fraction (0.0 = hit start, 1.0 = no hit), endpos, endAxis, c (info about the contact point)
+				trace_t resultTrace;
+				idVec3 dir;
+				player->viewAngles.ToVectors(&dir);
+				idVec3 end = playerLocation + (dir.ToMat3() * idVec3(40000.0f, 0, 0));
+				gameLocal.TracePoint(player, resultTrace, playerLocation, end, MASK_PLAYERSOLID, player);
+				gameLocal.Printf("traced fraction: %f\n", resultTrace.fraction);
+				gameLocal.Printf("traced endpos: %s\n", resultTrace.endpos.ToString());
+				gameLocal.Printf("traced contact point: %s\n", resultTrace.c.point.ToString());
+				gameLocal.Printf("end: %s @ %f\n", end.ToString(), resultTrace.c.dist);
+
+				//gameLocal.HitScan()
+
 				// prevent spawning if pointing at the sky
-				if (target) {
-					gameLocal.Printf("[BLASTER] target found");
-					spawnLocation = target->GetWorldCoordinates(playerLocation);
-					spawnLocation.z += 100;
+				spawnLocation = resultTrace.endpos;
+				spawnLocation.z += 100;
 
-					dict.Set("classname", "char_marine");
-					dict.Set("angle", va("%f", yaw + 180));
-					dict.Set("origin", spawnLocation.ToString());
+				dict.Set("classname", "char_marine");
+				dict.Set("angle", va("%f", yaw + 180));
+				dict.Set("origin", spawnLocation.ToString());
 
-					idEntity* newEnt = NULL;
-					gameLocal.SpawnEntityDef(dict, &newEnt);
+				idEntity* newEnt = NULL;
+				gameLocal.SpawnEntityDef(dict, &newEnt);
 
-					if (newEnt) {
-						gameLocal.Printf("[BLASTER] spawned entity '%s'\n", newEnt->name.c_str());
-					}
+				if (newEnt) {
+					gameLocal.Printf("[BLASTER] spawned entity '%s'\n", newEnt->name.c_str());
 				}
 
 
