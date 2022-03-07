@@ -485,7 +485,7 @@ stateResult_t rvWeaponBlaster::State_Fire ( const stateParms_t& parms ) {
 				spawnLocation = resultTrace.endpos;
 				spawnLocation.z += 100;
 
-				dict.Set("classname", "char_marine");
+				dict.Set("classname", "mini_marine");
 				dict.Set("angle", va("%f", yaw + 180));
 				dict.Set("origin", spawnLocation.ToString());
 
@@ -494,6 +494,12 @@ stateResult_t rvWeaponBlaster::State_Fire ( const stateParms_t& parms ) {
 
 				if (newEnt) {
 					gameLocal.Printf("[BLASTER] spawned entity '%s'\n", newEnt->name.c_str());
+					/*const idDict* newdict = gameLocal.FindEntityDefDict("mini_marine");
+					int sizeidx = newdict->FindKeyIndex("size");
+
+					if (sizeidx > -1) {
+						gameLocal.Printf("[BLASTER] mini_marine size '%s'\n", newdict->GetKeyVal(sizeidx)->GetValue().c_str());
+					}*/
 				}
 
 

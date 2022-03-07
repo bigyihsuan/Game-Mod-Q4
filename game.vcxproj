@@ -346,6 +346,7 @@
     <ClCompile Include="game\Target.cpp" />
     <ClCompile Include="game\TramGate.cpp" />
     <ClCompile Include="game\Trigger.cpp" />
+    <ClCompile Include="game\unit\UnitMiniMarine.cpp" />
     <ClCompile Include="game\vehicle\Vehicle.cpp" />
     <ClCompile Include="game\vehicle\VehicleAnimated.cpp" />
     <ClCompile Include="game\vehicle\VehicleController.cpp" />
@@ -467,6 +468,7 @@
     <ClInclude Include="game\Target.h" />
     <ClInclude Include="game\TramGate.h" />
     <ClInclude Include="game\Trigger.h" />
+    <ClInclude Include="game\unit\UnitMiniMarine.h" />
     <ClInclude Include="game\vehicle\Vehicle.h" />
     <ClInclude Include="game\vehicle\VehicleAnimated.h" />
     <ClInclude Include="game\vehicle\VehicleController.h" />

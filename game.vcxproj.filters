@@ -516,6 +516,7 @@
     <ClCompile Include="game\mp\stats\StatWindow.cpp">
       <Filter>Game\MP\Stats</Filter>
     </ClCompile>
+    <ClCompile Include="game\unit\UnitMiniMarine.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game\Actor.h">
@@ -830,6 +831,7 @@
     <ClInclude Include="game\mp\stats\StatWindow.h">
       <Filter>Game\MP\Stats</Filter>
     </ClInclude>
+    <ClInclude Include="game\unit\UnitMiniMarine.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="game\Game.def" />

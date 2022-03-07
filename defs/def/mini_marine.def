@@ -1,0 +1,23 @@
+// see pak001.pk4/def/ai/char_marine.def
+
+export mini_marine {
+	
+}
+
+entityDef mini_marine {
+	"inherit" "char_marine"
+	//"spawnclass" "unitMiniMarine"
+	
+	"size" "1 1 1"
+	
+	"ammo" "5"
+	"weaponPrefix" "machinegun"
+	"minShots" "1"	
+	"maxShots" "1"
+	
+	"health" "1"
+	
+	"npc_name"									"#str_999999"
+
+	"maxTimeToLive" "1000"
+}
