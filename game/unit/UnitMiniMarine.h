@@ -6,8 +6,7 @@
 
 class unitMiniMarine : public rvAITactical {
 public:
-	
-	unitMiniMarine(void);
+	//void Spawn(void);
 
 	int timeToLive;
 	int leftToLive;

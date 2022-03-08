@@ -6,9 +6,10 @@
 #include "../ai/AI_Util.h"
 #include "UnitMiniMarine.h"
 
-unitMiniMarine::unitMiniMarine(void) {
-	gameLocal.Printf("Trying to spawn mini marine\n");
+//unitMiniMarine::unitMiniMarine(void) {
+//	gameLocal.Printf("Trying to construct mini marine\n");
+//}
 
-	timeToLive = 0;
-	leftToLive = 0;
-}
+//void unitMiniMarine::Spawn(void) {
+//	gameLocal.Printf("Trying to spawn mini marine\n");
+//}

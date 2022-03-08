@@ -585,6 +585,50 @@ windowDef Desktop
 					font	"fonts/lowpixel"
 				}
 			}
+			windowDef p_help_3
+			{
+				rect	0,0,640,480
+				visible	1
+				windowDef help_3_ba
+				{
+					rect	206,178,600,112
+					visible	1
+					background	"gfx/guis/hud/obj_btn3"
+					matcolor	0.690,0.803,0.419,0
+				}
+				windowDef help_3_b
+				{
+					rect	206,290,600,20
+					visible	1
+					background	"gfx/guis/hud/obj_btn4"
+					matcolor	0.690,0.803,0.419,0
+				}
+				windowDef help_3_corner
+				{
+					rect	212,179,16,16
+					visible	1
+					background	"gfx/guis/mainmenu/corner"
+					matcolor	0.690,0.803,0.419,0
+				}
+				windowDef help_3_descript
+				{
+					rect	226,179,308,15
+					visible	1
+					forecolor	1,1,1,0
+					text	"#str_900002"
+					textscale	0.2
+					font	"fonts/lowpixel"
+				}
+				windowDef help_3_text
+				{
+					rect	370,195,180,100
+					visible	1
+					forecolor	0.815,0.870,0.713,0
+					text	"#str_900000"
+					textscale	0.2
+					font	"fonts/lowpixel"
+				}
+			}
 		}
 		windowDef p_obj2
 		{
@@ -732,6 +776,50 @@ windowDef Desktop
 					font	"fonts/lowpixel"
 				}
 			}
+			windowDef p_help_2
+			{
+				rect	0,0,640,480
+				visible	1
+				windowDef help_2_ba
+				{
+					rect	206,178,600,112
+					visible	1
+					background	"gfx/guis/hud/obj_btn3"
+					matcolor	0.690,0.803,0.419,0
+				}
+				windowDef help_2_b
+				{
+					rect	206,290,600,20
+					visible	1
+					background	"gfx/guis/hud/obj_btn4"
+					matcolor	0.690,0.803,0.419,0
+				}
+				windowDef help_2_corner
+				{
+					rect	212,179,16,16
+					visible	1
+					background	"gfx/guis/mainmenu/corner"
+					matcolor	0.690,0.803,0.419,0
+				}
+				windowDef help_2_descript
+				{
+					rect	226,179,308,15
+					visible	1
+					forecolor	1,1,1,0
+					text	"#str_900002"
+					textscale	0.2
+					font	"fonts/lowpixel"
+				}
+				windowDef help_2_text
+				{
+					rect	370,195,180,100
+					visible	1
+					forecolor	0.815,0.870,0.713,0
+					text	"#str_900000"
+					textscale	0.2
+					font	"fonts/lowpixel"
+				}
+			}
 		}
 		windowDef p_obj1
 		{
@@ -826,6 +914,50 @@ windowDef Desktop
 					font	"fonts/lowpixel"
 				}
 			}
+			windowDef p_help_1
+			{
+				rect	0,0,640,480
+				visible	1
+				windowDef help_1_ba
+				{
+					rect	206,178,600,112
+					visible	1
+					background	"gfx/guis/hud/obj_btn3"
+					matcolor	0.690,0.803,0.419,0
+				}
+				windowDef help_1_b
+				{
+					rect	206,290,600,20
+					visible	1
+					background	"gfx/guis/hud/obj_btn4"
+					matcolor	0.690,0.803,0.419,0
+				}
+				windowDef help_1_corner
+				{
+					rect	212,179,16,16
+					visible	1
+					background	"gfx/guis/mainmenu/corner"
+					matcolor	0.690,0.803,0.419,0
+				}
+				windowDef help_1_descript
+				{
+					rect	226,179,308,15
+					visible	1
+					forecolor	1,1,1,0
+					text	"#str_900002"
+					textscale	0.2
+					font	"fonts/lowpixel"
+				}
+				windowDef help_1_text
+				{
+					rect	370,195,180,100
+					visible	1
+					forecolor	0.815,0.870,0.713,0
+					text	"#str_900000"
+					textscale	0.2
+					font	"fonts/lowpixel"
+				}
+			}
 		}
 		windowDef p_noObj
 		{
@@ -901,6 +1033,50 @@ windowDef Desktop
 					forecolor	0.815,0.870,0.713,0
 					text	"#str_200935"
 					textscale	0.31
+					font	"fonts/lowpixel"
+				}
+			}
+			windowDef p_help_0
+			{
+				rect	0,0,640,480
+				visible	1
+				windowDef help_0_ba
+				{
+					rect	206,178,600,112
+					visible	1
+					background	"gfx/guis/hud/obj_btn3"
+					matcolor	0.690,0.803,0.419,0
+				}
+				windowDef help_0_b
+				{
+					rect	206,290,600,20
+					visible	1
+					background	"gfx/guis/hud/obj_btn4"
+					matcolor	0.690,0.803,0.419,0
+				}
+				windowDef help_0_corner
+				{
+					rect	212,179,16,16
+					visible	1
+					background	"gfx/guis/mainmenu/corner"
+					matcolor	0.690,0.803,0.419,0
+				}
+				windowDef help_0_descript
+				{
+					rect	226,179,308,15
+					visible	1
+					forecolor	1,1,1,0
+					text	"#str_900002"
+					textscale	0.2
+					font	"fonts/lowpixel"
+				}
+				windowDef help_0_text
+				{
+					rect	370,195,180,100
+					visible	1
+					forecolor	0.815,0.870,0.713,0
+					text	"#str_900000"
+					textscale	0.2
 					font	"fonts/lowpixel"
 				}
 			}
