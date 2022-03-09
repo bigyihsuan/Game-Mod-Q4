@@ -2172,7 +2172,7 @@ windowDef Desktop
 			rect	44,329,49,26
 			visible	1
 			forecolor	0.866,0.921,0.764,1
-			text	"gui::player_scrap"
+			text	"PLACEHOLDER"
 			textscale	0.5
 			font	"fonts/chain"
 			shear	0,-.22

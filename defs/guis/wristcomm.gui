@@ -615,7 +615,7 @@ windowDef Desktop
 					rect	226,179,308,15
 					visible	1
 					forecolor	1,1,1,0
-					text	"#str_999998"
+					text	"Shoot your gun to spawn a unit. These units have a small ammo and health pool."
 					textscale	0.2
 					font	"fonts/lowpixel"
 				}
@@ -624,7 +624,7 @@ windowDef Desktop
 					rect	370,195,180,100
 					visible	1
 					forecolor	0.815,0.870,0.713,0
-					text	"#str_999998"
+					text	"Shoot your gun to spawn a unit. These units have a small ammo and health pool."
 					textscale	0.2
 					font	"fonts/lowpixel"
 				}
@@ -806,7 +806,7 @@ windowDef Desktop
 					rect	226,179,308,15
 					visible	1
 					forecolor	1,1,1,0
-					text	"#str_999998"
+					text	"Shoot your gun to spawn a unit. These units have a small ammo and health pool."
 					textscale	0.2
 					font	"fonts/lowpixel"
 				}
@@ -815,7 +815,7 @@ windowDef Desktop
 					rect	370,195,180,100
 					visible	1
 					forecolor	0.815,0.870,0.713,0
-					text	"#str_999998"
+					text	"Shoot your gun to spawn a unit. These units have a small ammo and health pool."
 					textscale	0.2
 					font	"fonts/lowpixel"
 				}
@@ -944,7 +944,7 @@ windowDef Desktop
 					rect	226,179,308,15
 					visible	1
 					forecolor	1,1,1,0
-					text	"#str_999998"
+					text	"Shoot your gun to spawn a unit. These units have a small ammo and health pool."
 					textscale	0.2
 					font	"fonts/lowpixel"
 				}
@@ -953,7 +953,7 @@ windowDef Desktop
 					rect	370,195,180,100
 					visible	1
 					forecolor	0.815,0.870,0.713,0
-					text	"#str_999998"
+					text	"Shoot your gun to spawn a unit. These units have a small ammo and health pool."
 					textscale	0.2
 					font	"fonts/lowpixel"
 				}
@@ -1066,7 +1066,7 @@ windowDef Desktop
 					rect	226,179,308,15
 					visible	1
 					forecolor	1,1,1,0
-					text	"#str_999998"
+					text	"Shoot your gun to spawn a unit. These units have a small ammo and health pool."
 					textscale	0.2
 					font	"fonts/lowpixel"
 				}
@@ -1075,7 +1075,7 @@ windowDef Desktop
 					rect	370,195,180,100
 					visible	1
 					forecolor	0.815,0.870,0.713,0
-					text	"#str_999998"
+					text	"Shoot your gun to spawn a unit. These units have a small ammo and health pool."
 					textscale	0.2
 					font	"fonts/lowpixel"
 				}

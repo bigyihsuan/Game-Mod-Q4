@@ -922,7 +922,7 @@
 	"#str_200932" "FAVORITE SERVER",
 	"#str_200933" "PASSWORD ENABLED",
 	"#str_200934" "DEDICATED SERVER",
-	"#str_200935" "No current mission objectives. Spawn units by shooting your Blaster.",
+	"#str_200935" "Shoot with your blaster to spawn a unit.",
 	"#str_200936" "ENTER",
 	"#str_200937" "- CLICK TO CONTINUE -",
 	"#str_200938" "LOADING",
@@ -1115,6 +1115,5 @@
 	"#str_223008" "Right;Centered;Lower Right",
 	"#str_223009" "Enable detailed sky",
 
-	"#str_999999" "Blaster Unit",
-	"#str_999998" "Shoot your gun to spawn a unit. These units have a small ammo and health pool."
+	"#str_999999" "Blaster Unit"
 }
