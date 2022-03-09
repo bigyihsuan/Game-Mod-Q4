@@ -735,11 +735,6 @@
 	"#str_123006" "Filter by Mod",
 	"#str_123007" "Game",
 	"#str_123008" "all",
-	"#str_123009" "Tickrate",
-
-
-	"#str_999999" "Blaster Unit",
-	"#str_900000" "Shoot your gun to spawn a unit. These units have a small ammo and health pool.",
-	"#str_900002" "Guns Shoot People"
+	"#str_123009" "Tickrate"
 }
 

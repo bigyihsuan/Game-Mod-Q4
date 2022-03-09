@@ -1,6 +1,6 @@
 #!/bin/bash
 
-QUAKE4="/mnt/d/SteamLibrary/steamapps/common/Quake 4/midterm"
+QUAKE4="/mnt/d/SteamLibrary/steamapps/common/Quake 4/midterm/"
 DLL="../Win32/Release/Gamex86.dll"
 PK4="game000.pk4"
 PAK="pak"

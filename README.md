@@ -14,7 +14,7 @@ The Bash script `build.sh` installs the mod into the Quake 4 folder in Steam's `
 To change this, run specify the installation directory: `build.sh install-dir`.
 
 ## Running
-The repo contains a Windows shortcut `midterm.lnk` pointing to `"D:\SteamLibrary\steamapps\common\Quake 4\Quake4.exe" +set fs_game midterm`. If your Quake 4 installation is elsewhere, change the target file and directory
+The repo contains a Windows shortcut `midterm.lnk` pointing to `"D:\SteamLibrary\steamapps\common\Quake 4\Quake4.exe" +set fs_game midterm`. If your Quake 4 installation is elsewhere, change the target file and directory.
 
 ## Testing Midterm Deliverables
 Use branch `midterm`.
@@ -37,5 +37,9 @@ Use branch `midterm`.
 * Desktop shortcut: located in the root of the repo.
 * README: right here.
 * Main menu: red, and "Guns Shoot People"
-* HUD: Scrap counter
-* Help: If no objectives, check tab menu.
+* HUD: (non-functional, but there) Scrap counter
+* Help: If no objectives, check tab menu. (doesn't show if objectives are present)
+
+# Known Bugs
+* Blaster sometimes doesn't spawn the unit.
+* Some strings show their key rather than their value. (unknown why)
