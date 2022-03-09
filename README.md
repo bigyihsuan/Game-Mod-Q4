@@ -1,8 +1,8 @@
 # The guns shoot people
 
 This is a mod for Quake 4 for IT266 Game Modding's midterm project.
-It changes the guns (currently only the Blaster) to not shoot bullets, but rather small units have a small health and ammo pool.
-These units are different based on the gun (tbi...).
+It changes the guns to not shoot bullets, but rather small units have a small health and ammo pool.
+(These units are different based on the gun).
 (Enemies will also drop items used for upgrading units.)
 (Certain enemies are weak to specific gun-units, and strong against others.)
 (You can force your units to swarm a specific spot using the right mouse button.)

@@ -5,8 +5,17 @@ DLL="../Win32/Release/Gamex86.dll"
 PK4="game000.pk4"
 PAK="pak"
 
+if [[ $# > 0 ]]; then
+	QUAKE4="$1"
+fi
+
+echo "installing mod into $QUAKE4..."
+
+if [[ -e "$QUAKE4"/def/* ]]; then
+	echo "removing existing defs..."
+	rm "$QUAKE4"/def/*
+fi
 echo "moving defs..."
-rm "$QUAKE4"/def/*
 cp -a defs/. "$QUAKE4"
 
 if [[ -e "$QUAKE4"/gamex86.dll ]]; then
